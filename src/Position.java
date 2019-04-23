@@ -15,4 +15,9 @@ public class Position {
     public int getY() {
         return y_cor;
     }
+
+    @Override
+    public String toString() {
+        return "X: "+x_cor+" Y: "+y_cor;
+    }
 }
