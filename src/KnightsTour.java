@@ -86,7 +86,7 @@ public class KnightsTour {
         int[][] tour = new int[dimen][dimen];
         for(int i = 0; i < full; i++){
             Position cur = current_tour.get(i);
-            tour[cur.getX()][cur.getY()] = i;
+            tour[cur.getX()][cur.getY()] = i+1;
         }
 
         return tour;
@@ -117,7 +117,7 @@ public class KnightsTour {
 
     private static void warnBacktrack(ArrayList<Position> tour, int[][]visited){
 
-        if(tour.size() >= full){
+        if(tour.size() == full){
             System.out.println("SOLVED");
             running = false;
         }
@@ -125,11 +125,11 @@ public class KnightsTour {
             Position next_move = nextMoveWarnsdorff(tour, visited);
             tour.add(next_move);
             visited[next_move.getX()][next_move.getY()] = 1;
-            bruteBacktrack(tour, visited);
+            warnBacktrack(tour, visited);
             if(!running){
                 return;
             }
-            else if(tour.size() >1){
+            else{
                 tour.remove(next_move);
                 visited[next_move.getX()][next_move.getY()] = 0;
             }
@@ -237,10 +237,17 @@ public class KnightsTour {
             weight_list.add(weight);
             possible_moves.add(p);
         }
-        min_weight = weight_list.indexOf(Collections.min(weight_list));
+        min_weight = 8;
+        int cur_weight;
         for(Position pos : possible_moves){
-            if(pos.getWeight() == min_weight){
-                next_move = pos;
+            cur_weight = pos.getWeight();
+            if(cur_weight<min_weight){
+                min_weight = cur_weight;
+            }
+        }
+        for (Position q :possible_moves){
+            if(q.getWeight()==min_weight){
+                next_move = q;
             }
         }
         return next_move;
