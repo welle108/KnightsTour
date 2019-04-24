@@ -1,3 +1,7 @@
+/*
+    Simple position class used to store previously visited positions on board. Weight variable is used to
+    determine next move with Warnsdorff
+ */
 public class Position {
     private int x_cor;
     private int y_cor;

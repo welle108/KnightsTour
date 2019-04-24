@@ -265,6 +265,8 @@ public class KnightsTour {
         return next_move;
     }
 
+    //Calculates neighbor move with least amount of viable available moves and returns that position
+
     private static int calcWeight(Position position, int[][] visited){
         int weight = 0;
         int x = position.getX();
