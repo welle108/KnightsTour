@@ -86,7 +86,7 @@ public class KnightsTour {
         int[][] tour = new int[dimen][dimen];
         for(int i = 0; i < full; i++){
             Position cur = current_tour.get(i);
-            tour[cur.getX()][cur.getY()] = i+1;
+            tour[cur.getX()][cur.getY()] = i;
         }
 
         return tour;
@@ -123,14 +123,13 @@ public class KnightsTour {
         }
         else{
             Position next_move = nextMoveWarnsdorff(tour, visited);
-
             tour.add(next_move);
             visited[next_move.getX()][next_move.getY()] = 1;
             bruteBacktrack(tour, visited);
             if(!running){
                 return;
             }
-            else{
+            else if(tour.size() >1){
                 tour.remove(next_move);
                 visited[next_move.getX()][next_move.getY()] = 0;
             }
