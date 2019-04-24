@@ -10,6 +10,9 @@ import java.util.List;
 
 
 public class KnightsTour {
+    private static long finish_time;
+    private static long start_time;
+    private static long time = 0;
     private static Position init;
     private static boolean running = true;
     private static int full;
@@ -64,7 +67,10 @@ public class KnightsTour {
             Arrays.fill(row, 0);
         }
         visited[init.getX()][init.getY()] = 1;
+        start_time = System.nanoTime();
         bruteBacktrack(current_tour, visited);
+        finish_time = System.nanoTime();
+        time = finish_time - start_time;
          int[][] tour = new int[dimen][dimen];
          for(int i = 0; i < full; i++){
              Position cur = current_tour.get(i);
@@ -82,7 +88,10 @@ public class KnightsTour {
             Arrays.fill(row, 0);
         }
         visited[init.getX()][init.getY()] = 1;
+        start_time = System.nanoTime();
         warnBacktrack(current_tour, visited);
+        finish_time = System.nanoTime();
+        time = finish_time - start_time;
         int[][] tour = new int[dimen][dimen];
         for(int i = 0; i < full; i++){
             Position cur = current_tour.get(i);
@@ -286,6 +295,7 @@ public class KnightsTour {
     }
 
     public static void printTour(int[][] tour){
+        System.out.println("Calculation time: "+time+" Nanoseconds");
         for(int i = 0; i<tour.length; i++){
             for(int j = 0; j<tour.length; j++){
                 if(j == tour.length-1){
