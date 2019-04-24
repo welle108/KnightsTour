@@ -7,6 +7,10 @@ Uses Apache Commons CLI 1.4 library
 x and y coordinates of the starting position. For instance, a board with a heigh and width of 6 starting at position (0,0) would be entered as:
 
     KnightsTour 6 0 0
+    
+Whereas the same board checked using Warnsdorff's Algorithm would be input as
+    
+    KnightsTour -h 6 0 0
 
 Dependiencies:
 * commons-cli:commons-cli: 1.4
