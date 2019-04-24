@@ -31,7 +31,7 @@ public class KnightsTour {
         try{
             CommandLine cmd = parser.parse(options, args);
             if(cmd.hasOption("h")){
-                System.out.println("DOIN' HEURISTICS");
+                System.out.println("DOIN' HEURISTICS...");
             dimen = Integer.parseInt(args[1]);
             x = Integer.parseInt(args[2]);
             y = Integer.parseInt(args[3]);
@@ -295,7 +295,11 @@ public class KnightsTour {
     }
 
     public static void printTour(int[][] tour){
-        System.out.println("Calculation time: "+time+" Nanoseconds");
+        System.out.println();
+        System.out.println("                 Solution:");
+        System.out.println("      Calculation time: "+time+" Nanoseconds");
+        System.out.println("-----------------------------------------------");
+        System.out.println();
         for(int i = 0; i<tour.length; i++){
             for(int j = 0; j<tour.length; j++){
                 if(j == tour.length-1){
