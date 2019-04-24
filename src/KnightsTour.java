@@ -20,7 +20,11 @@ public class KnightsTour {
     private  static int x;
     private static int y;
 
-
+    /*
+        The only real difference between the two approaches in this code lie in the neighbor calculation method
+        for each. In checkMoves() all empty neighbors are returned as possibilities; however, with nextMoveWarnsdorff()
+        only one new position is returned at a time, dramatically shortening runtime.
+     */
 
 
     public static void main(String[] args) {
@@ -145,7 +149,6 @@ public class KnightsTour {
 
         }
     }
-
 
     private static List<Position> checkMoves(ArrayList<Position> tour, int[][] visited){
         ArrayList<Position> possible_moves = new ArrayList<>();
