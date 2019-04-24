@@ -1,6 +1,11 @@
 public class Position {
     private int x_cor;
     private int y_cor;
+    private int weight;
+
+    public Position() {
+
+    }
 
     public Position(int x_cor, int y_cor) {
 
@@ -14,6 +19,14 @@ public class Position {
 
     public int getY() {
         return y_cor;
+    }
+
+    public void setWeight(int weight){
+        this.weight = weight;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
     @Override
