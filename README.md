@@ -13,3 +13,5 @@ Whereas the same board checked using Warnsdorff's Algorithm would be input as
 Dependiencies:
 * Apache Commons CLI 1.4 library 
 
+Sources:
+* https://github.com/mariocervera/CodingChallenges/blob/master/CombinatorialSearch/KnightTour.java
